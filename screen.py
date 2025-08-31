@@ -11,13 +11,15 @@ GPIO.setup(13, GPIO.IN)                 # define input port / turn screen on
 
 while True:                              # 
     if GPIO.input(11) == 0:              # turning screen off 
-        subprocess.run(['volumio pause']) 
-        subprocess.run(['xset dpms force off'])
+#        subprocess.run(['volumio pause']) 
+#        subprocess.run(['xset dpms force off'])
+        subprocess.run(['ls'])
         print("screen is turned off") 
         sleep(1)
 
     if GPIO.input(13) == 0:              # turn screen on 
-        subprocess.run(['volumio play']) 
-        subprocess.run(['xset dpms force on'])
+#        subprocess.run(['volumio play']) 
+#        subprocess.run(['xset dpms force on'])
+        subprocess.run(['ls'])
         print("screen is turned on")
         sleep(1)
