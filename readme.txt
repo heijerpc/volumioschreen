@@ -27,4 +27,5 @@ cmd: sudo systemctl enable autoScreen
 cmd: sudo systemctl start autoScreen
 
 status checken:
-cmd: sudo systemctl status autoScreen
+cmd: sudo systemctl status autoScreen:
+log: journalctl -u autoScreen
