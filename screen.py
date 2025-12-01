@@ -13,13 +13,14 @@ os.environ['DISPLAY'] = ':0'
 
 while True:                              # 
     if GPIO.input(11) == 0:              # turning screen off 
-        
-        subprocess.run(['xset dpms force off'])
+        os.system('xset dpms force off')
+#        subprocess.run(['xset dpms force off'])
         print("screen is turned off") 
         sleep(1)
 
     if GPIO.input(13) == 0:              # turn screen on 
-        subprocess.run(['volumio play']) 
-        subprocess.run(['xset dpms force on'])
+        os.system('xset dpms force on')
+        subprocess.run(['volumio play,shell=True']) 
+ #       subprocess.run(['xset dpms force on'])
         print("screen is turned on")
         sleep(1)
