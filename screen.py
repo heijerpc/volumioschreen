@@ -18,7 +18,7 @@ print('script running as: ')
 subprocess.call('whoami', shell=True)
 
 while True:                              # 
-    if GPIO.input(11) == 1:              # turning screen off 
+    if GPIO.input(11):                   # turning screen off 
 #        os.system('xset dpms force off')
         #subprocess.run('xset dpms force off', shell = True)
         subprocess.call('XAUTHORITY=~volumio/.Xauthority DISPLAY=:0 xset dpms force off', shell=True)
