@@ -21,8 +21,8 @@ while True:                              #
     if GPIO.input(11) == 1:              # turning screen off 
 #        os.system('xset dpms force off')
         #subprocess.run('xset dpms force off', shell = True)
-        subprocess.call('XAUTHORITY=~pi/.Xauthority DISPLAY=:0 xset dpms force off', shell=True)
-        print("screen is turned off") 
+        subprocess.call('XAUTHORITY=~volumio/.Xauthority DISPLAY=:0 xset dpms force off', shell=True)
+        print("screen is turned off")  
         sleep(1)
 
  #   if GPIO.input(13) == 1:              # turn screen on 
