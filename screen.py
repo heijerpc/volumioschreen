@@ -22,7 +22,7 @@ while True:                              #
 
     if GPIO.input(13) == 0:              # turn screen on 
         os.system('xset dpms force on')
-        subprocess.run(['volumio play,shell=True ']) 
+        subprocess.run("volumio play",shell=True) 
  #       subprocess.run(['xset dpms force on'])
         print("screen is turned on")
         sleep(1)
