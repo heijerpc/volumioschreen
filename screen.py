@@ -20,13 +20,14 @@ subprocess.call('whoami', shell=True)
 while True:                              # 
     if GPIO.input(11) == 1:              # turning screen off 
 #        os.system('xset dpms force off')
-        subprocess.run('xset dpms force off', shell = True)
+        #subprocess.run('xset dpms force off', shell = True)
+        subprocess.call('XAUTHORITY=~pi/.Xauthority DISPLAY=:0 xset dpms force off', shell=True)
         print("screen is turned off") 
         sleep(1)
 
-    if GPIO.input(13) == 1:              # turn screen on 
+ #   if GPIO.input(13) == 1:              # turn screen on 
  #       os.system('xset dpms force on')
-        subprocess.run("volumio play",shell=True) 
-        subprocess.run('xset dpms force on',shell=True)
-        print("screen is turned on")
-        sleep(1)
+ #       subprocess.run("volumio play",shell=True) 
+ #       subprocess.run('xset dpms force on',shell=True)
+#      print("screen is turned on")
+ #       sleep(1)
