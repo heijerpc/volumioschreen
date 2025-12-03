@@ -11,7 +11,11 @@ GPIO.setup(13, GPIO.IN)                 # define input port / turn screen on
 
 os.environ['DISPLAY'] = ':0'
 
+
 print("screen on / screen off is running") 
+print(os.environ['DISPLAY'])
+print('script running as: ') 
+subprocess.call('whoami', shell=True)
 
 while True:                              # 
     if GPIO.input(11) == 1:              # turning screen off 
