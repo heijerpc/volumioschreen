@@ -10,7 +10,7 @@ GPIO.setup(13, GPIO.IN)                 # define input port / turn screen on
 # os.environ['DISPLAY'] = ':0'
 
 while True:                              # 
-    if GPIO.input(11) == True:                   # turning screen off 
+    if GPIO.input(11) == False:                   # turning screen off 
         subprocess.call('XAUTHORITY=~volumio/.Xauthority DISPLAY=:0 xset dpms force off', shell=True)
         print("screen is turned off")  
         sleep(1)
