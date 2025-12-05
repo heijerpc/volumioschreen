@@ -1,20 +1,16 @@
 import RPi.GPIO as GPIO
 from time import sleep 
 import subprocess
-import os
-
 
 GPIO.setwarnings(False)                # allow use of pin within multiple script
 GPIO.setmode(GPIO.BOARD)               # use pinnumbers of board
 GPIO.setup(11, GPIO.IN)                 # define input port / turn screen off
 GPIO.setup(13, GPIO.IN)                 # define input port / turn screen on 
 
-os.environ['DISPLAY'] = ':0'
+# os.environ['DISPLAY'] = ':0'
 
 while True:                              # 
     if GPIO.input(11) == True:                   # turning screen off 
-#        os.system('xset dpms force off')
-        #subprocess.run('xset dpms force off', shell = True)
         subprocess.call('XAUTHORITY=~volumio/.Xauthority DISPLAY=:0 xset dpms force off', shell=True)
         print("screen is turned off")  
         sleep(1)
